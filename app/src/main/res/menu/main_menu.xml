@@ -9,8 +9,16 @@
              android:icon="@drawable/baseline_image_24"
              android:title="Gallery"
              />
+         <item android:id="@+id/rateus"
+             android:title="Rateus"
+             android:icon="@drawable/baseline_star_rate_24"
+             />
+
      </group>
-    <item android:title="Profile">
+    <item
+        android:id="@+id/profile"
+        android:title="Profile">
+
         <menu>
             <group android:checkableBehavior="single">
                 <item android:id="@+id/about"
