@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:weightSum="100"
+        android:minHeight="600dp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/after_10th"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="40sp"
+            android:layout_weight="30"
+            android:textAllCaps="false"
+            android:text="After 10th"
+            />
+        <Button
+            android:id="@+id/after_12th"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textAllCaps="false"
+            android:textSize="40sp"
+            android:layout_weight="30"
+            android:text="After 12th"
+            />
+        <Button
+            android:id="@+id/after_grad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textAllCaps="false"
+            android:textSize="40sp"
+            android:layout_weight="30"
+            android:text="After Graduation"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
