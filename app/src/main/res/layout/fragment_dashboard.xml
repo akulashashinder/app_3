@@ -19,6 +19,7 @@
             android:layout_weight="30"
             android:textAllCaps="false"
             android:text="After 10th"
+            android:background="@drawable/rouned_corner"
             />
         <Button
             android:id="@+id/after_12th"
@@ -29,6 +30,7 @@
             android:textSize="40sp"
             android:layout_weight="30"
             android:text="After 12th"
+            android:background="@drawable/rouned_corner"
             />
         <Button
             android:id="@+id/after_grad"
@@ -39,6 +41,7 @@
             android:textSize="40sp"
             android:layout_weight="30"
             android:text="After Graduation"
+            android:background="@drawable/rouned_corner"
             />
 
     </LinearLayout>

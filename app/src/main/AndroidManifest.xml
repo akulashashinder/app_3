@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".after12"
+            android:exported="false" />
+        <activity
+            android:name=".after10"
+            android:exported="false" />
+        <activity
             android:name=".register"
             android:exported="false" />
         <activity
@@ -31,9 +37,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
-        <activity android:name=".settings"
-            android:exported="false"/>
+            android:exported="false" />
+        <activity
+            android:name=".settings"
+            android:exported="false" />
     </application>
 
 </manifest>
