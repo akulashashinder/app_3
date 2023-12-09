@@ -52,9 +52,8 @@ public class DashboardFragment extends Fragment {
     }
 
     private void onButton1Click() {
-        Intent intent = new Intent(getContext(), after10.class);
+        Intent intent = new Intent(getContext(),CourseListActivity.class);
         getActivity().startActivity(intent);
-        getActivity().finish();
 
         // Implement functionality for Button 1
         Toast.makeText(getActivity(), "after 10th clicked", Toast.LENGTH_SHORT).show();
@@ -62,15 +61,16 @@ public class DashboardFragment extends Fragment {
 
     private void onButton2Click() {
 
-        Intent intent = new Intent(getContext(), after12.class);
+        Intent intent = new Intent(getContext(), CourseListActivity.class);
         getActivity().startActivity(intent);
-        getActivity().finish();
 
         // Implement functionality for Button 2
         Toast.makeText(getActivity(), "after 12th Clicked!", Toast.LENGTH_SHORT).show();
     }
 
     private void onButton3Click() {
+        Intent intent = new Intent(getContext(), CourseListActivity.class);
+        getActivity().startActivity(intent);
         // Implement functionality for Button 2
         Toast.makeText(getActivity(), "after graduation Clicked!", Toast.LENGTH_SHORT).show();
     }
