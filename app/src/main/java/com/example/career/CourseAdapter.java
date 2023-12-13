@@ -35,6 +35,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         holder.textCourseName.setText(course.getName());
         holder.textCourseDescription.setText(course.getDescription());
         holder.btnView.setOnClickListener(v -> listener.onItemClick(course));
+//        holder.btnping.setOnClickListener(v -> listener.onItemClick());
     }
 
     @Override
@@ -46,12 +47,14 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         public TextView textCourseName;
         public TextView textCourseDescription;
         public Button btnView;
+        public Button btnping;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textCourseName = itemView.findViewById(R.id.textCourseName);
             textCourseDescription = itemView.findViewById(R.id.textCourseDescription);
             btnView = itemView.findViewById(R.id.btnView);
+            btnping = itemView.findViewById(R.id.btnping);
         }
     }
 

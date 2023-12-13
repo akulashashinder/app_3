@@ -1,12 +1,20 @@
 package com.example.career;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,13 +22,21 @@ import java.util.List;
 public class CourseListActivity extends AppCompatActivity implements CourseAdapter.OnItemClickListener{
     private RecyclerView recyclerView;
     private CourseAdapter courseAdapter;
+    private DatabaseReference database;
+    private String standard;
+    List<Course> courseList;
+    private DatabaseReference standardReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_list);
         // Assuming you have a list of courses
-        List<Course> courseList = getCourseList();
+        Intent intent=getIntent();
+        standard=intent.getStringExtra("standard");
+        database=FirebaseDatabase.getInstance().getReference();
+        standardReference= FirebaseDatabase.getInstance().getReference("courses/"+standard);
+         getCourseList();
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -29,13 +45,48 @@ public class CourseListActivity extends AppCompatActivity implements CourseAdapt
         recyclerView.setAdapter(courseAdapter);
     }
 
-    private List<Course> getCourseList() {
+    private void getCourseList() {
         // Add sample courses
-        List<Course> courses = new ArrayList<>();
-        courses.add(new Course("Course 1", "Description 1"));
-        courses.add(new Course("Course 2", "Description 2"));
+        courseList= new ArrayList<>();
+        standardReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    String courseId = dataSnapshot.getKey();
+                    fetchUserCourse(courseId);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         // Add more courses as needed
-        return courses;
+    }
+    private void fetchUserCourse(String courseId) {
+        DatabaseReference courseDatabase=database.child("courses/"+standard).child(courseId);
+        courseDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    Course course=snapshot.getValue(Course.class);
+                    Log.i("coursename",course.getName());
+                    courseList.add(course);
+
+                }
+
+                courseAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override

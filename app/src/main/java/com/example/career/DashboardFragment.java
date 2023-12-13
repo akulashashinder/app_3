@@ -53,6 +53,7 @@ public class DashboardFragment extends Fragment {
 
     private void onButton1Click() {
         Intent intent = new Intent(getContext(),CourseListActivity.class);
+        intent.putExtra("standard","10th");
         getActivity().startActivity(intent);
 
         // Implement functionality for Button 1
@@ -62,6 +63,7 @@ public class DashboardFragment extends Fragment {
     private void onButton2Click() {
 
         Intent intent = new Intent(getContext(), CourseListActivity.class);
+        intent.putExtra("standard","12th");
         getActivity().startActivity(intent);
 
         // Implement functionality for Button 2
@@ -70,6 +72,7 @@ public class DashboardFragment extends Fragment {
 
     private void onButton3Click() {
         Intent intent = new Intent(getContext(), CourseListActivity.class);
+        intent.putExtra("standard","grad");
         getActivity().startActivity(intent);
         // Implement functionality for Button 2
         Toast.makeText(getActivity(), "after graduation Clicked!", Toast.LENGTH_SHORT).show();

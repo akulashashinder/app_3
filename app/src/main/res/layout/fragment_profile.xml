@@ -33,6 +33,15 @@
             android:textSize="25sp"
             android:text="Signout"
             />
+        <Button
+            android:id="@+id/addcourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="25sp"
+            android:visibility="gone"
+            android:text="Add Course"
+            />
 
     </LinearLayout>
 

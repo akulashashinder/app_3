@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity  {
     FirebaseAuth auth;
@@ -44,12 +46,6 @@ public class MainActivity extends AppCompatActivity  {
         } else if (itemId == R.id.about) {
             showToast("About Clicked");
             return true;
-        } else if (itemId == R.id.login) {
-            showToast("Log In Clicked");
-            return true;
-        } else if (itemId == R.id.profile1) {
-            showToast("Profile Clicked");
-            return true;
         } else if (itemId == R.id.settings) {
             showToast("settings clicked");
             onClick();
@@ -75,6 +71,8 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        database.child("abcd").setValue("abcd");
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -94,7 +92,13 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
-        //FIREBASE//
+
+
+
+                      //FIREBASE//
+
+
+
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
