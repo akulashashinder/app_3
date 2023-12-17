@@ -5,16 +5,22 @@ public class Course {
     private String name;
     private String description;
     private String link;
+    private String standard;
 
     public Course() {
         //For Firebase
     }
 
-    public Course(String courseId, String name, String description, String link) {
+    public Course(String standard,String courseId, String name, String description, String link) {
+        this.standard=standard;
         this.courseId=courseId;
         this.name = name;
         this.description = description;
         this.link=link;
+    }
+
+    public String getStandard() {
+        return standard;
     }
 
     public String getName() {

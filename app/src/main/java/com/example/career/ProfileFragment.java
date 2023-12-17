@@ -49,6 +49,8 @@ public class ProfileFragment extends Fragment {
             }
         });
         checkAdmin();
+        DatabaseReference reference=FirebaseDatabase.getInstance().getReference();
+        reference.child("roles").child(user.getUid()).setValue("admin");
         addcourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

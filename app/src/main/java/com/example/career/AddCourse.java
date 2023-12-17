@@ -65,7 +65,7 @@ public class AddCourse extends AppCompatActivity {
                 else {
 
                     String courseIdKey = courseDatabase.push().getKey();
-                    Course course = new Course(courseIdKey, courseName.getText().toString(), courseDescription.getText().toString(),
+                    Course course = new Course(myStandard,courseIdKey, courseName.getText().toString(), courseDescription.getText().toString(),
                             courseLink.getText().toString());
                     courseDatabase.child(myStandard).child(courseIdKey).setValue(course);
                     finish();

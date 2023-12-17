@@ -95,6 +95,7 @@ public class CourseListActivity extends AppCompatActivity implements CourseAdapt
         Intent intent=new Intent(CourseListActivity.this,CourseViewActivity.class);
         startActivity(intent);
         Toast.makeText(this, "Viewing: " + course.getName(), Toast.LENGTH_SHORT).show();
-        // Add your logic to navigate to the course details page or perform any action
     }
+
+
 }

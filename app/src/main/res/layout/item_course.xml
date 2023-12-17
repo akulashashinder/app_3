@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -5,7 +6,27 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:layout_margin="18dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="#3228D3"
+            android:text="Pin"
+            android:textSize="20sp"
+        />
+        <ImageView
+            android:id="@+id/logoPin"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/push_pin_logo"
+            />
 
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textCourseName"
@@ -29,13 +50,6 @@
         android:text="View"
         android:layout_marginTop="8dp"/>
 
-    <Button
-        android:id="@+id/btnping"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ping"
-        android:layout_gravity="center_horizontal"
 
-        />
 
 </LinearLayout>
