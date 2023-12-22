@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,12 +21,6 @@
             android:exported="false" />
         <activity
             android:name=".CourseListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".after12"
-            android:exported="false" />
-        <activity
-            android:name=".after10"
             android:exported="false" />
         <activity
             android:name=".register"

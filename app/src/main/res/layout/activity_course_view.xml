@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".CourseViewActivity">
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="This is Course Details"/>
+        android:id="@+id/content_title"/>
+    <com.github.barteksc.pdfviewer.PDFView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pdfView"/>
+
+
+
 
 </RelativeLayout>
