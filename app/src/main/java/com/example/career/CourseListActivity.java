@@ -93,6 +93,8 @@ public class CourseListActivity extends AppCompatActivity implements CourseAdapt
     public void onItemClick(Course course) {
         // Handle the "View" button click for the selected course
         Intent intent=new Intent(CourseListActivity.this,CourseViewActivity.class);
+        intent.putExtra("courseName",course.getName());
+        intent.putExtra("courseLink",course.getLink());
         startActivity(intent);
         Toast.makeText(this, "Viewing: " + course.getName(), Toast.LENGTH_SHORT).show();
     }

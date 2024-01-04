@@ -3,6 +3,7 @@ package com.example.career;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -32,8 +33,9 @@ public class CourseViewActivity extends AppCompatActivity {
         ActionBar actionBar=getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#001F3F")));
         PDFView pdfView = findViewById(R.id.pdfView);
-        String url="https://d2cyt36b7wnvt9.cloudfront.net/exams/wp-content/uploads/2022/03/30234614/JEE-Main-Syllabus-2022.pdf";
-        String topicName="Sheshi";
+        Intent intent =getIntent();
+        String url=intent.getStringExtra("courseLink");
+        String topicName=intent.getStringExtra("courseName");
         TextView textView=findViewById(R.id.content_title);
         textView.setText(topicName);
         Log.i("my url",url);
